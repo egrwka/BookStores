@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookStore App</title>
+    <link type="text/css" rel="stylesheet" href="../../Content/Site.css"/>
+</head>
+<body>
+    <header>
+        <h1>Магазин книжек</h1>
+    </header>
+    <nav>
+        <ul class="menu">
+            <li>@Html.ActionLink("Распродажа книг", "Index", "Home")</li>
+            <li>@Html.ActionLink("Контакт", "Contact", "Home")</li>
+            <li>@Html.ActionLink("О нас", "About", "Home")</li>
+        </ul>
+    </nav>
+    @RenderBody()
+      <footer>
+          <div class="footercontent">
+              <p>&copy; @DateTime.Now - Egor Oleynik</p>
+          </div>
+      </footer>     
+</body>
+</html>

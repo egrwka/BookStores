@@ -1,0 +1,46 @@
+﻿@model MVCRudnev.Models.Book
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Покупка</title>
+    <link type="text/css" rel="stylesheet" href="../../Content/Site.css" />
+</head>
+<body>
+    @if (ViewBag.BookName == null)
+    {
+        <div>
+            <h3>Форма оформления покупки</h3>
+            <form method="post" action="">
+                <input type="hidden" value="@ViewBag.BookId" name="BookId" />
+                <table>
+                    <tr>
+                        <td><p>Введите свое имя </p></td>
+                        <td><input type="text" name="Person" /> </td>
+                    </tr>
+                    <tr>
+                        <td><p>Введите адрес почты:</p></td>
+                        <td>
+                            <input type="text" name="Address" />
+                        </td>
+                    </tr>
+                </table>
+                <div class="editLink">
+                    <p>
+                        <input type="submit" value="Отправить" id="editbutton" />
+                        <a href="/Home/Index" id="editbutton">Отмена</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    }
+    else
+    {
+        @Html.Raw(ViewBag.BookName);
+    }
+</body>
+</html>

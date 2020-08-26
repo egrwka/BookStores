@@ -1,0 +1,29 @@
+﻿@model IEnumerable<MVCRudnev.Models.Book>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="maincontent">
+    <table id="tablesale">
+        <tr>
+            <th><p>Название книги</p></th>
+            <th><p id="autor">Автор</p></th>
+            <th><p>Цена</p></th>
+            <th><p>Купить</p></th>
+            <th><p>Редактировать</p></th>
+            <th><p>Удалить</p></th>
+        </tr>
+        @foreach (var b in ViewBag.Books)
+    {
+    <tr>
+        <td><p>@b.Name</p></td>
+        <td><p>@b.Author</p></td>
+        <td><p>@b.Price</p></td>
+        <td><p><a href="/Home/Buy/@b.Id" id="editbutton">Купить</a></p></td>
+        <td><p><a href="/Home/Edit_Book/@b.Id" id="editbutton">Редактировать</a></p></td>
+        <td><p><a href="/Home/Delete_Book/@b.Id" id="editbutton">Удалить</a></p></td>
+    </tr>
+}
+    </table>
+    <a href="/Home/New_Book/"> <input type="submit" value="Добавить новую книгу" id="addBook" /></a>
+</div>
